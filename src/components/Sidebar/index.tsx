@@ -1,13 +1,13 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../store";
-import { useAppSelector } from "../store/hooks";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { toggleLesson } from "../store/moduleSlice";
 
 // import { Container } from './styles';
 
 const Sidebar: React.FC = () => {
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { modules } = useAppSelector((state) => state.modules);
   return (
     <aside>
@@ -16,14 +16,14 @@ const Sidebar: React.FC = () => {
           <strong>{module.title}</strong>
           <ul>
             {module.lessons.map((lesson) => (
-              <>
-                <li key={lesson.id}>{lesson.title}</li>
-                {/* <button
+              <li key={lesson.id}>
+                {lesson.title}
+                <button
                   onClick={() => dispatch(toggleLesson({ module, lesson }))}
                 >
                   Selecionar
-                </button> */}
-              </>
+                </button>
+              </li>
             ))}
           </ul>
         </div>
