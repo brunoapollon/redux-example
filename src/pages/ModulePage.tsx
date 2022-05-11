@@ -2,7 +2,7 @@ import React from "react";
 
 import Video from "../components/Video";
 import Sidebar from "../components/Sidebar";
-import { useAppSelector } from "../components/store/hooks";
+import { useAppSelector } from "../store/hooks";
 
 const ModulePage: React.FC = () => {
   const { user } = useAppSelector((satte) => satte.user);

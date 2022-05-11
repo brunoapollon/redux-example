@@ -1,6 +1,6 @@
 import React from "react";
-import { useAppDispatch, useAppSelector } from "../store/hooks";
-import { toggleLesson } from "../store/moduleSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { toggleLesson } from "../../store/moduleSlice";
 
 // import { Container } from './styles';
 

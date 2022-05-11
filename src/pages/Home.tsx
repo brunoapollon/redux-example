@@ -1,5 +1,5 @@
 import React from "react";
-import { useAppSelector } from "../components/store/hooks";
+import { useAppSelector } from "../store/hooks";
 
 // import { Container } from './styles';
 

@@ -2,8 +2,8 @@ import React, { useCallback } from "react";
 
 import { Form } from "@unform/web";
 import Input from "../components/Input";
-import { useAppDispatch, useAppSelector } from "../components/store/hooks";
-import { userLogin } from "../components/store/userSlice";
+import { useAppDispatch, useAppSelector } from "../store/hooks";
+import { userLogin } from "../store/userSlice";
 import { useNavigate } from "react-router-dom";
 
 interface signInData {
