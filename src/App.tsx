@@ -1,13 +1,16 @@
 import React from "react";
-import Video from "./components/Video";
-import Sidebar from "./components/Sidebar";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import LoginPage from "./pages/LoginPage";
+import ModulePage from "./pages/ModulePage";
 
 function App() {
   return (
-    <div>
-      <Video />
-      <Sidebar />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/modules" element={<ModulePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
