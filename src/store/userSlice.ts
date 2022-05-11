@@ -45,10 +45,20 @@ export const userSlice = createSlice({
         },
       };
     },
+    userLoggout(state, action: PayloadAction) {
+      localStorage.removeItem("@redux:user");
+      return {
+        ...state,
+        user: {
+          name: "",
+          userName: "",
+        },
+      };
+    },
   },
 });
 
-export const { userLogin } = userSlice.actions;
+export const { userLogin, userLoggout } = userSlice.actions;
 
 export const selectUser = (state: RootState) => state.user.user;
 

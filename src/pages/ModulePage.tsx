@@ -3,6 +3,7 @@ import React from "react";
 import Video from "../components/Video";
 import Sidebar from "../components/Sidebar";
 import { useAppSelector } from "../store/hooks";
+import ButtonLogout from "../components/ButtonLogout";
 
 const ModulePage: React.FC = () => {
   const { user } = useAppSelector((satte) => satte.user);
@@ -16,6 +17,7 @@ const ModulePage: React.FC = () => {
       </nav>
       <Video />
       <Sidebar />
+      <ButtonLogout />
     </div>
   );
 };
