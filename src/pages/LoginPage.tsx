@@ -2,6 +2,9 @@ import React, { useCallback } from "react";
 
 import { Form } from "@unform/web";
 import Input from "../components/Input";
+import { useAppDispatch, useAppSelector } from "../components/store/hooks";
+import { userLogin } from "../components/store/userSlice";
+import { useNavigate } from "react-router-dom";
 
 interface signInData {
   name: string;
@@ -9,12 +12,14 @@ interface signInData {
 }
 
 const LoginPage: React.FC = () => {
-  const handleSubmitLogin = useCallback(
-    async ({ name, userName }: signInData) => {
-      console.log(name, userName);
-    },
-    []
-  );
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const { user } = useAppSelector((state) => state.user);
+
+  const handleSubmitLogin = useCallback(({ name, userName }: signInData) => {
+    dispatch(userLogin({ name, userName }));
+    navigate("/modules");
+  }, []);
 
   return (
     <div>

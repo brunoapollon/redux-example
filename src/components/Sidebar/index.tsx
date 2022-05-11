@@ -1,6 +1,4 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "../store";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
 import { toggleLesson } from "../store/moduleSlice";
 
