@@ -8,6 +8,7 @@ const Home: React.FC = () => {
   return (
     <div>
       <h1>O NOME DA FERA É: {user.name}</h1>
+      <h1>E O USER DA FERA É: {user.userName}</h1>
     </div>
   );
 };
