@@ -1,6 +1,6 @@
 import React from "react";
-import ButtonLogout from "../components/ButtonLogout";
-import { useAppSelector } from "../store/hooks";
+import ButtonLogout from "../../components/ButtonLogout";
+import { useAppSelector } from "../../store/hooks";
 
 // import { Container } from './styles';
 
