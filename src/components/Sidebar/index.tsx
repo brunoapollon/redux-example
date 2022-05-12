@@ -1,8 +1,7 @@
 import React from "react";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { toggleLesson } from "../../store/moduleSlice";
-
-// import { Container } from './styles';
+import { Content } from "./styles";
 
 const Sidebar: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -10,12 +9,12 @@ const Sidebar: React.FC = () => {
   return (
     <aside>
       {modules.map((module) => (
-        <div key={module.id}>
+        <Content key={module.id}>
           <strong>{module.title}</strong>
           <ul>
             {module.lessons.map((lesson) => (
               <li key={lesson.id}>
-                {lesson.title}
+                <p>{lesson.title}</p>
                 <button
                   onClick={() => dispatch(toggleLesson({ module, lesson }))}
                 >
@@ -24,7 +23,7 @@ const Sidebar: React.FC = () => {
               </li>
             ))}
           </ul>
-        </div>
+        </Content>
       ))}
     </aside>
   );

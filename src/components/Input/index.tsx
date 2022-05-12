@@ -1,5 +1,6 @@
 import React, { createRef, InputHTMLAttributes, useEffect } from "react";
 import { useField } from "@unform/core";
+import { Container } from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string;
@@ -19,9 +20,9 @@ const Input: React.FC<InputProps> = ({ name, ...rest }) => {
   }, [fieldName, registerField]);
 
   return (
-    <div>
+    <Container>
       <input defaultValue={defaultValue} ref={inputRef} {...rest} />
-    </div>
+    </Container>
   );
 };
 

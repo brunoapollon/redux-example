@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useAppDispatch } from "../../store/hooks";
 import { userLoggout } from "../../store/userSlice";
 
+import { Button } from "./styles";
+
 const ButtonLogout: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
@@ -13,9 +15,9 @@ const ButtonLogout: React.FC = () => {
   }, []);
 
   return (
-    <button type="button" onClick={() => handleLoggout()}>
+    <Button type="button" onClick={() => handleLoggout()}>
       Sair
-    </button>
+    </Button>
   );
 };
 

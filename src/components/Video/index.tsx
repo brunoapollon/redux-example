@@ -1,5 +1,6 @@
 import React from "react";
 import { useAppSelector } from "../../store/hooks";
+import { Container } from "./styles";
 
 // import { Container } from './styles';
 
@@ -9,16 +10,16 @@ const Video: React.FC = () => {
   );
 
   return (
-    <div>
+    <Container>
       <strong>
         {" "}
-        Módulo {!!activeModule.title ? activeModule.title : "ainda n deu"}{" "}
+        Módulo: {!!activeModule.title ? activeModule.title : "ainda n deu"}{" "}
       </strong>
       <span>
         {" "}
-        Aula {!!activeLesson.title ? activeLesson.title : "ainda n deu"}{" "}
+        Aula: {!!activeLesson.title ? activeLesson.title : "ainda n deu"}{" "}
       </span>
-    </div>
+    </Container>
   );
 };
 
