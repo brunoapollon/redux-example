@@ -4,7 +4,7 @@ import { Form } from "@unform/web";
 import Input from "../../components/Input";
 import { useAppDispatch, useAppSelector } from "../../store/hooks";
 import { userLogin } from "../../store/userSlice";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import { Container } from "./styles";
 
 interface signInData {
@@ -15,12 +15,15 @@ interface signInData {
 const LoginPage: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
-  const { user } = useAppSelector((state) => state.user);
 
   const handleSubmitLogin = useCallback(({ name, userName }: signInData) => {
     dispatch(userLogin({ name, userName }));
     navigate("/modules");
   }, []);
+
+  const user = localStorage.getItem("@redux:user");
+
+  if (user) return <Navigate to="/modules" />;
 
   return (
     <Container>
